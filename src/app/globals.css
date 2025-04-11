@@ -1,26 +1,172 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 210 15% 10%;
+    --foreground: 210 25% 98%;
+
+    --card: 210 15% 15%;
+    --card-foreground: 210 25% 98%;
+
+    --popover: 210 15% 10%;
+    --popover-foreground: 210 25% 98%;
+
+    --primary: 354 70% 54%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 20% 20%;
+    --secondary-foreground: 210 25% 98%;
+
+    --muted: 210 15% 20%;
+    --muted-foreground: 210 20% 80%;
+
+    --accent: 354 70% 54%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 15% 20%;
+    --input: 210 15% 20%;
+    --ring: 354 70% 54%;
+
+    --radius: 0.5rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold mb-6 relative pb-3 inline-block;
+  }
+
+  .section-heading::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-3/5 h-1 bg-primary rounded-full;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  .project-card {
+    @apply transition-all duration-300 hover:translate-y-[-8px] hover:shadow-xl;
+  }
+
+  .tech-badge {
+    @apply bg-secondary text-foreground text-xs px-2 py-1 rounded-full transition-all duration-300 hover:bg-primary hover:text-white;
+  }
+
+  .link-with-hover {
+    @apply relative inline-block text-primary;
+  }
+
+  .link-with-hover::after {
+    content: '';
+    @apply absolute left-0 bottom-[-3px] w-0 h-[2px] bg-primary transition-all duration-300;
+  }
+
+  .link-with-hover:hover::after {
+    @apply w-full;
+  }
+
+  /* Mobile Navigation Active State */
+  .mobile-nav-link.active {
+    @apply text-primary;
+  }
+
+  /* Custom animation classes */
+  .hover-rotate {
+    @apply transition-transform duration-300 hover:rotate-6;
+  }
+
+  .hover-pulse {
+    @apply transition-all duration-300 hover:scale-105;
+  }
+
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .delayed-fade-in {
+    opacity: 0;
+    animation: delayedFade 1s forwards;
+  }
+
+  .delayed-fade-in-800 {
+    opacity: 0;
+    animation: delayedFade 1s forwards;
+    animation-delay: 800ms;
+  }
+
+  .delayed-fade-in-1200 {
+    opacity: 0;
+    animation: delayedFade 1s forwards;
+    animation-delay: 1200ms;
+  }
+
+  @keyframes delayedFade {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Fun, slightly "goofy" font styling for certain elements */
+  .fun-heading {
+    @apply font-bold;
+    letter-spacing: 0.5px;
+    transform-origin: center;
+    animation: wiggle 3s infinite ease-in-out;
+  }
+
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-1deg);
+    }
+    50% {
+      transform: rotate(1deg);
+    }
+  }
+
+  /* Unique badge styles */
+  .specialty-badge {
+    @apply bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 border border-primary/30;
+  }
+
+  .specialty-badge:hover {
+    @apply bg-primary text-white;
+    transform: scale(1.05);
+  }
 }
