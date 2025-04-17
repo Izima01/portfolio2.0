@@ -1,24 +1,40 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { FileText, Code, BookOpen, Microscope, Dna } from 'lucide-react';
+import { FileText, Code, BookOpen, Microscope, Dna } from '@/components/ui/icons';
 import Image from 'next/image';
-// import resume from '../assets/Izima Obisike resume.pdf';
+import { useIntersection } from '@/hooks/use-intersection';
 
 const About = () => {
+  const [sectionRef, isVisible] = useIntersection<HTMLElement>({
+    threshold: 0.35,
+    rootMargin: '-50px 0px',
+  });
+
+  const badges = [
+    { icon: Code, text: 'Software Developer' },
+    { icon: BookOpen, text: 'Lifelong Learner' },
+    { icon: Microscope, text: 'Science Enthusiast' },
+    { icon: Dna, text: 'Astronomy Buff' },
+  ];
+
   return (
-    <section id='about' className='py-20'>
+    <section id='about' ref={sectionRef} className='py-20'>
       <div className='container mx-auto'>
         <div className='max-w-5xl mx-auto'>
           <h2 className='section-heading'>About Me</h2>
 
-          <div className='grid md:grid-cols-2 gap-8 items-start'>
-            <div className='md:col-span-1 space-y-4'>
-              <p className='text-muted-foreground'>
+          <div className='grid md:grid-cols-3 gap-16 items-start'>
+            <div className='md:col-span-2 space-y-4'>
+              <p className='fadeIn' data-visible={isVisible}>
                 Hello! I'm Izima Obisike, a passionate software developer.
                 <br /> I bring a unique perspective to development.
               </p>
 
-              <div className='p-4 border border-primary/20 rounded-lg bg-primary/5 my-6 mr-4'>
+              <div
+                className='p-4 border border-primary/20 rounded-lg bg-primary/5 my-6'
+                data-visible={isVisible}
+                style={{ transitionDelay: '200ms' }}
+              >
                 <p className='text-foreground italic'>
                   "I approach development like diagnosis—breaking down complex
                   problems, identifying the root cause, and applying the best
@@ -28,7 +44,11 @@ const About = () => {
                 </p>
               </div>
 
-              <p className='text-muted-foreground'>
+              <p
+                className='fadeIn'
+                data-visible={isVisible}
+                style={{ transitionDelay: '400ms' }}
+              >
                 When I'm not coding or studying medicine, you can find me
                 exploring topics in space and biology, catching up on Marvel
                 movies, or revisiting classics like Harry Potter and Pacific
@@ -41,34 +61,32 @@ const About = () => {
                 <Image
                   src='/profile.jpg'
                   alt='Izima Obisike'
-                  // className='mx-8'
                   width={320}
                   height={600}
+                  priority
                 />
               </div>
             </div>
 
-            <div className='col-span-2 flex flex-wrap gap-5'>
-              <div className='pt-4 flex flex-wrap gap-3'>
-                <div className='flex items-center gap-2 bg-secondary/40 px-3 py-1 rounded-full'>
-                  <Code size={16} className='text-primary' />
-                  <span>Software Developer</span>
-                </div>
-                <div className='flex items-center gap-2 bg-secondary/40 px-3 py-1 rounded-full'>
-                  <BookOpen size={16} className='text-primary' />
-                  <span>Lifelong Learner</span>
-                </div>
-                <div className='flex items-center gap-2 bg-secondary/40 px-3 py-1 rounded-full'>
-                  <Microscope size={16} className='text-primary' />
-                  <span>Science Enthusiast</span>
-                </div>
-                <div className='flex items-center gap-2 bg-secondary/40 px-3 py-1 rounded-full'>
-                  <Dna size={16} className='text-primary' />
-                  <span>Astronomy Buff</span>
-                </div>
+            <div className='col-span-3'>
+              <div className='grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6'>
+                {badges.map((item, index) => (
+                  <div
+                    key={item.text}
+                    className='flex items-center gap-4 bg-secondary/40 px-4 py-1.5 rounded-full transform transition-all duration-500'
+                    style={{
+                      transform: `translateX(${isVisible ? 0 : '100px'})`,
+                      opacity: isVisible ? 1 : 0,
+                      transitionDelay: `${index * 150}ms`,
+                    }}
+                  >
+                    <item.icon size={16} className='text-primary' />
+                    <span>{item.text}</span>
+                  </div>
+                ))}
               </div>
 
-              <div className='pt-6 ml-auto'>
+              <div className='flex justify-center w-full'>
                 <Button asChild className='hover-pulse'>
                   <a
                     href={'/Izima Obisike resume.pdf'}

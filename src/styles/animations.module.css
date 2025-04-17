@@ -1,0 +1,47 @@
+.slideInFromRight {
+  transform: translateX(100px);
+  opacity: 0;
+  transition: transform 500ms, opacity 500ms;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.slideInFromRight[data-visible='true'] {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.fadeIn {
+  opacity: 0;
+  transition: opacity 500ms;
+  will-change: opacity;
+}
+
+.fadeIn[data-visible='true'] {
+  opacity: 1;
+}
+
+.pulseHover {
+  transition: transform 300ms;
+  will-change: transform;
+}
+
+.pulseHover:hover {
+  transform: scale(1.05);
+}
+
+.floatAnimation {
+  animation: float 6s ease-in-out infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

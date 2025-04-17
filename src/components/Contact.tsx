@@ -76,91 +76,85 @@ const Contact = () => {
         </p>
 
         <div className='max-w-4xl mx-auto'>
-          <div className='grid md:grid-cols-2 gap-8'>
-            <div>
-              <div className='space-y-6'>
-                <h3 className='text-xl font-bold mb-4'>Get in Touch</h3>
+          <div className='grid md:grid-cols-2 gap-12'>
+            <form onSubmit={handleSubmit} ref={formRef} className='space-y-4'>
+              <div>
+                <Input
+                  type='text'
+                  name='name'
+                  placeholder='Your Name'
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className='bg-card border-border'
+                />
+              </div>
 
-                <div className='flex items-start gap-4'>
-                  <div className='p-3 bg-primary/10 rounded-full text-primary'>
-                    <Mail size={20} />
-                  </div>
-                  <div>
-                    <h4 className='font-medium'>Email</h4>
-                    <p className='text-muted-foreground'>
-                      kingsleyizima@gmail.com
-                    </p>
-                  </div>
+              <div>
+                <Input
+                  type='email'
+                  name='email'
+                  placeholder='Your Email'
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className='bg-card border-border'
+                />
+              </div>
+
+              <div>
+                <Textarea
+                  name='message'
+                  placeholder='Your Message'
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className='min-h-[120px] bg-card border-border'
+                />
+              </div>
+
+              <Button type='submit' disabled={isSubmitting} className='w-full'>
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </Button>
+            </form>
+
+            {/* <div> */}
+            <div className='space-y-6 ml-10'>
+              <h3 className='text-xl font-bold mb-4'>Get in Touch</h3>
+
+              <div className='flex items-start gap-4'>
+                <div className='p-3 bg-primary/10 rounded-full text-primary'>
+                  <Mail size={20} />
                 </div>
-
-                <div className='flex items-start gap-4'>
-                  <div className='p-3 bg-primary/10 rounded-full text-primary'>
-                    <Phone size={20} />
-                  </div>
-                  <div>
-                    <h4 className='font-medium'>Phone</h4>
-                    <p className='text-muted-foreground'>+234 706 041 2338</p>
-                  </div>
+                <div>
+                  <h4 className='font-medium'>Email</h4>
+                  <p className='text-muted-foreground'>
+                    kingsleyizima@gmail.com
+                  </p>
                 </div>
+              </div>
 
-                <div className='flex items-start gap-4'>
-                  <div className='p-3 bg-primary/10 rounded-full text-primary'>
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <h4 className='font-medium'>Location</h4>
-                    <p className='text-muted-foreground'>Lagos, Nigeria</p>
-                  </div>
+              <div className='flex items-start gap-4'>
+                <div className='p-3 bg-primary/10 rounded-full text-primary'>
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <h4 className='font-medium'>Phone</h4>
+                  <p className='text-muted-foreground'>+234 706 041 2338</p>
+                </div>
+              </div>
+
+              <div className='flex items-start gap-4'>
+                <div className='p-3 bg-primary/10 rounded-full text-primary'>
+                  <MapPin size={20} />
+                </div>
+                <div>
+                  <h4 className='font-medium'>Location</h4>
+                  <p className='text-muted-foreground'>Lagos, Nigeria</p>
                 </div>
               </div>
             </div>
-
-            <div>
-              <form onSubmit={handleSubmit} ref={formRef} className='space-y-4'>
-                <div>
-                  <Input
-                    type='text'
-                    name='name'
-                    placeholder='Your Name'
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className='bg-card border-border'
-                  />
-                </div>
-
-                <div>
-                  <Input
-                    type='email'
-                    name='email'
-                    placeholder='Your Email'
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className='bg-card border-border'
-                  />
-                </div>
-
-                <div>
-                  <Textarea
-                    name='message'
-                    placeholder='Your Message'
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className='min-h-[120px] bg-card border-border'
-                  />
-                </div>
-
-                <Button
-                  type='submit'
-                  disabled={isSubmitting}
-                  className='w-full'
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </Button>
-              </form>
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </div>

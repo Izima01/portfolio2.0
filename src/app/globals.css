@@ -71,11 +71,13 @@
   }
 
   .project-card {
-    @apply transition-all duration-300 hover:translate-y-[-8px] hover:shadow-xl;
+    @apply transition-transform duration-300 hover:translate-y-[-8px] hover:shadow-xl;
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   .tech-badge {
-    @apply bg-secondary text-foreground text-xs px-2 py-1 rounded-full transition-all duration-300 hover:bg-primary hover:text-white;
+    @apply bg-secondary text-foreground text-xs px-2 py-1 rounded-full transition-colors duration-300 hover:bg-primary hover:text-white;
   }
 
   .link-with-hover {
@@ -84,7 +86,7 @@
 
   .link-with-hover::after {
     content: '';
-    @apply absolute left-0 bottom-[-3px] w-0 h-[2px] bg-primary transition-all duration-300;
+    @apply absolute left-0 bottom-[-3px] w-0 h-[2px] bg-primary transition-[width] duration-300;
   }
 
   .link-with-hover:hover::after {
@@ -99,39 +101,38 @@
   /* Custom animation classes */
   .hover-rotate {
     @apply transition-transform duration-300 hover:rotate-6;
+    transform: translateZ(0);
   }
 
   .hover-pulse {
-    @apply transition-all duration-300 hover:scale-105;
+    @apply transition-transform duration-300 hover:scale-105;
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   .float-animation {
     animation: float 6s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
   }
 
   .delayed-fade-in {
     opacity: 0;
+    transform: translateZ(0);
     animation: delayedFade 1s forwards;
   }
 
   .delayed-fade-in-800 {
     opacity: 0;
+    transform: translateZ(0);
     animation: delayedFade 1s forwards;
     animation-delay: 800ms;
   }
 
   .delayed-fade-in-1200 {
     opacity: 0;
+    transform: translateZ(0);
     animation: delayedFade 1s forwards;
     animation-delay: 1200ms;
   }
@@ -139,6 +140,7 @@
   @keyframes delayedFade {
     to {
       opacity: 1;
+      transform: translateZ(0);
     }
   }
 
@@ -148,15 +150,21 @@
     letter-spacing: 0.5px;
     transform-origin: center;
     animation: wiggle 3s infinite ease-in-out;
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
   }
 
   @keyframes wiggle {
     0%,
     100% {
-      transform: rotate(-1deg);
+      transform: rotate(0deg) translateZ(0);
     }
-    50% {
-      transform: rotate(1deg);
+    25% {
+      transform: rotate(-1deg) translateZ(0);
+    }
+    75% {
+      transform: rotate(1deg) translateZ(0);
     }
   }
 

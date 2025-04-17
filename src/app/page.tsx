@@ -1,10 +1,28 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Skills from '@/components/Skills';
-import Projects from '@/components/Projects';
-import Contact from '@/components/Contact';
+
+// Dynamically import components that are below the fold
+const About = dynamic(() => import('@/components/About'), {
+  ssr: false,
+  loading: () => <div className='h-screen' />,
+});
+
+const Skills = dynamic(() => import('@/components/Skills'), {
+  ssr: false,
+  loading: () => <div className='h-screen' />,
+});
+
+const Projects = dynamic(() => import('@/components/Projects'), {
+  ssr: false,
+  loading: () => <div className='h-screen' />,
+});
+
+const Contact = dynamic(() => import('@/components/Contact'), {
+  ssr: false,
+  loading: () => <div className='h-screen' />,
+});
 
 export default function Home() {
   return (

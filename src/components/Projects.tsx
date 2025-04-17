@@ -198,7 +198,7 @@ const Projects = () => {
           skills and technologies.
         </p>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
           {projects.map((project, index) => (
             <Card
               key={project.id}
@@ -212,12 +212,12 @@ const Projects = () => {
                   alt={project.title}
                   width={530}
                   height={240}
-                  className='object- transition-transform duration-500 group-hover:scale-110'
+                  className='object-cover transition-transform duration-500 group-hover:scale-110'
                 />
               </div>
 
               <CardContent className=''>
-                <h3 className='text-xl font-bold mb-2 fun-heading flex items-center gap-2'>
+                <h3 className='text-xl font-bold mb-2 fun-heading flex items-center gap-2 pt-1'>
                   {project.title}
                 </h3>
                 <p className='text-muted-foreground mb-3'>
