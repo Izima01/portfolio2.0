@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  ArrowDown,
-  Github,
-  Linkedin,
-  Mail,
-  Microscope,
-  Heart,
-  Brain,
-  Rocket,
-} from 'lucide-react';
+import { Heart, Brain, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import TypewriterText from './ui/TypewriterText';
 import Image from 'next/image';
@@ -64,7 +55,7 @@ const Hero = () => {
 
         <div className='absolute top-10 right-16 w-40 h-40 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary shadow-lg shadow-primary/50 hover-pulse'>
           <Image
-            src='/profile.jpg'
+            src='/profile.webp'
             alt='Izima Obisike'
             width={240}
             height={240}

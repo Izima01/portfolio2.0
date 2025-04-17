@@ -1,6 +1,12 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { FileText, Code, BookOpen, Microscope, Dna } from '@/components/ui/icons';
+import {
+  FileText,
+  Code,
+  BookOpen,
+  Microscope,
+  Dna,
+} from '@/components/ui/icons';
 import Image from 'next/image';
 import { useIntersection } from '@/hooks/use-intersection';
 
@@ -59,7 +65,7 @@ const About = () => {
             <div className='md:col-span-1'>
               <div className='rounded-lg overflow-hidden border border-primary/30 shadow-lg shadow-primary/50 hover-pulse w-fit ms-auto'>
                 <Image
-                  src='/profile.jpg'
+                  src='/profile.webp'
                   alt='Izima Obisike'
                   width={320}
                   height={600}

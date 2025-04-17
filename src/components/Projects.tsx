@@ -11,6 +11,7 @@ import work4 from '../assets/work4.webp';
 import work6 from '../assets/work6.webp';
 import work5 from '../assets/work5.webp';
 import work9 from '../assets/work9.webp';
+import work13 from '../assets/work 13.png';
 
 import Image, { StaticImageData } from 'next/image';
 
@@ -28,6 +29,16 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
+      image: work13,
+      title: "Izima Obisike's Portfolio",
+      technologies: ['React', 'Tailwind', 'Tailwind Animate'],
+      description:
+        'Portfolio website to showcase my projects and skills. Also for potential collaborations and job opportunities',
+      github: '',
+      demo: 'https://izima-obisike-20.vercel.app/',
+    },
+    {
+      id: 2,
       // category: 'fullstack',
       image: work12,
       title: 'Travaye Web App',
@@ -45,7 +56,7 @@ const Projects = () => {
       demo: 'https://www.travaye.ng/',
     },
     {
-      id: 4,
+      id: 3,
       // category: 'fullstack',
       image: work8,
       title: 'Talkative Chat App',
@@ -65,7 +76,7 @@ const Projects = () => {
       demo: 'https://talkative-chat.vercel.app/',
     },
     {
-      id: 2,
+      id: 4,
       // category: 'fullstack',
       image: work10,
       title: 'RenCostume Web App',
@@ -112,7 +123,7 @@ const Projects = () => {
       demo: 'https://artsy-marketplace.netlify.app/',
     },
     {
-      id: 8,
+      id: 7,
       // category: 'frontend',
       image: work4,
       title: 'Music Player App',
@@ -129,7 +140,7 @@ const Projects = () => {
       demo: 'https://izzycodes-musica.netlify.app/',
     },
     {
-      id: 7,
+      id: 8,
       // category: 'frontend',
       image: work6,
       title: 'Trivia App',
@@ -159,35 +170,6 @@ const Projects = () => {
 
   // Create refs for animation
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  // useEffect(() => {
-  //   const options = {
-  //     root: null,
-  //     rootMargin: '100px', // Increased margin to start loading earlier
-  //     threshold: 0.1,
-  //   };
-
-  //   const observer = new IntersectionObserver((entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.isIntersecting) {
-  //         entry.target.classList.add('animate-fade-in');
-  //         entry.target.classList.remove('opacity-0');
-  //         // Unobserve after animation to improve performance
-  //         observer.unobserve(entry.target);
-  //       }
-  //     });
-  //   }, options);
-
-  //   projectRefs.current.forEach((ref) => {
-  //     if (ref) observer.observe(ref);
-  //   });
-
-  //   return () => {
-  //     projectRefs.current.forEach((ref) => {
-  //       if (ref) observer.unobserve(ref);
-  //     });
-  //   };
-  // }, []);
 
   return (
     <section id='projects' className='py-20'>

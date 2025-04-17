@@ -17,17 +17,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <TooltipProvider>
-      <html>
-        <body>
+    <html lang='en'>
+      <body>
+        <TooltipProvider>
           <Toaster />
           <div className='min-h-screen flex flex-col'>
             <Navbar />
             <main className='flex-1 md:mb-0 mb-16'>{children}</main>
             <Footer />
           </div>
-        </body>
-      </html>
-    </TooltipProvider>
+        </TooltipProvider>
+      </body>
+    </html>
   );
 }
