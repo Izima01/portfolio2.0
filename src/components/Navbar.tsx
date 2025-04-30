@@ -81,7 +81,7 @@ const Navbar = () => {
             : 'bg-transparent'
         )}
       >
-        <div className='container px-0 max-w-5xl mx-auto py-4 flex justify-between items-center'>
+        <div className='container xl:max-w-6xl px-10 py-4 flex justify-between items-center'>
           <a
             href='#home'
             className='text-2xl font-bold text-primary flex items-center gap-2 fun-heading'
@@ -112,7 +112,7 @@ const Navbar = () => {
       </header>
 
       {/* Mobile Bottom Navigation Bar */}
-      <div className='md:hidden fixed bottom-0 left-0 right-0 bg-card/95 backdrop-blur-sm shadow-lg z-50'>
+      <div className='md:hidden fixed bottom-0 left-0 right-0 bg-card/95 backdrop-blur-md shadow-primary/40 shadow-inner z-50'>
         <div className='grid grid-cols-5 w-full'>
           {navLinks.map((link) => (
             <a

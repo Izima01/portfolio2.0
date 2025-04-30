@@ -23,7 +23,7 @@ export default function RootLayout({
           <Toaster />
           <div className='min-h-screen flex flex-col'>
             <Navbar />
-            <main className='flex-1 md:mb-0 mb-16'>{children}</main>
+            <main className='flex-1 md:mb-0 mb-12 mt-16'>{children}</main>
             <Footer />
           </div>
         </TooltipProvider>

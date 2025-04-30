@@ -99,7 +99,7 @@ const Skills = () => {
         <div className='stars absolute inset-0' />
       </div>
 
-      <div className='container px-0 relative z-10 max-w-5xl mx-auto'>
+      <div className='container px-10 xl:max-w-6xl relative z-10 max-w-5xl mx-auto'>
         <h2 className='section-heading text-center mx-auto'>Tech Odyssey</h2>
         <div className='grid gap-8 md:grid-cols-3'>
           {Object.entries(skillsByCategory).map(

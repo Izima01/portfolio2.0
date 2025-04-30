@@ -31,7 +31,7 @@ const Projects = () => {
       id: 1,
       image: work13,
       title: "Izima Obisike's Portfolio",
-      technologies: ['React', 'Tailwind', 'Tailwind Animate'],
+      technologies: ['React', 'Tailwind', 'Tailwind Animate', 'Emailjs'],
       description:
         'Portfolio website to showcase my projects and skills. Also for potential collaborations and job opportunities',
       github: '',
@@ -63,15 +63,13 @@ const Projects = () => {
       technologies: [
         'React',
         'TailwindCSS',
-        'Zustand',
         'TypeScript',
         'MongoDB',
         'Express JS',
-        'Node JS',
         'Socket.io',
       ],
       description:
-        'A full stack chat app where you can chat with friends, create and manage group chats. Real-time notifications and typing indicator',
+        'A full stack chat app where you can chat with friends. Real-time notifications and typing indicator',
       github: 'https://github.com/Izima01/talkative-chat/',
       demo: 'https://talkative-chat.vercel.app/',
     },
@@ -135,7 +133,7 @@ const Projects = () => {
         'Rest API',
       ],
       description:
-        'A music palyer app developed with React. I consumed a custom API and used it to display the songs and albums. You can play, pause, shuffle. Also like songs and view the liked songs',
+        'A music player app developed with React. I consumed a custom API and used it to display the songs and albums. You can play, pause, shuffle. Also like songs and view the liked songs',
       github: 'https://www.github.com/Izima01/Musica',
       demo: 'https://izzycodes-musica.netlify.app/',
     },
@@ -151,7 +149,7 @@ const Projects = () => {
         'Open Trivia API',
       ],
       description:
-        'A quiz app with API gottr=en from an API which has different categories and difficulties of trivia questions. Countdown timer and scoring system',
+        'A quiz app with different categories and difficulties of trivia questions. Countdown timer and scoring system',
       github: 'https://github.com/Izima01/portfolio1.0',
       demo: 'https://izzys-trivia-app.netlify.app',
     },
@@ -172,33 +170,32 @@ const Projects = () => {
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   return (
-    <section id='projects' className='py-20'>
-      <div className='container mx-auto px-0 max-w-5xl'>
+    <section id='projects' className='py-10'>
+      <div className='container xl:max-w-6xl px-10'>
         <h2 className='section-heading text-center mx-auto'>Projects</h2>
         <p className='text-center text-muted-foreground mb-12 max-w-2xl mx-auto'>
           Here are some of my recent projects. Each demonstrates different
           skills and technologies.
         </p>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 lg:gap-10'>
           {projects.map((project, index) => (
             <Card
               key={project.id}
-              className='project-card bg-card overflow-hidden border border-border opacity-'
-              // ref={(el) => projectRefs.current[index] == el}
+              className='project-card bg-card overflow-hidden border border-border h-fit'
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className='relative h-60 overflow-hidden group'>
+              <div className='relative w-full h-48 lg:h-60 overflow-hidden group'>
                 <Image
                   src={project.image}
                   alt={project.title}
-                  width={530}
-                  height={240}
-                  className='object-cover transition-transform duration-500 group-hover:scale-110'
+                  // width={530}
+                  // height={240}
+                  className='object-cover h-full transition-transform duration-500 group-hover:scale-110'
                 />
               </div>
 
-              <CardContent className=''>
+              <CardContent className='pt-3 px-6 sm:px-3.5 lg:px-6'>
                 <h3 className='text-xl font-bold mb-2 fun-heading flex items-center gap-2 pt-1'>
                   {project.title}
                 </h3>

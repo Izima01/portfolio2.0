@@ -68,7 +68,7 @@ const Contact = () => {
 
   return (
     <section id='contact' className='py-20 bg-secondary/20'>
-      <div className='container mx-auto px-0 max-w-5xl'>
+      <div className='container px-10 xl:max-w-6xl'>
         <h2 className='section-heading text-center mx-auto'>Contact Me</h2>
         <p className='text-center text-muted-foreground mb-12 max-w-2xl mx-auto'>
           Feel free to reach out if you're looking to collaborate, have
@@ -119,10 +119,10 @@ const Contact = () => {
             </form>
 
             {/* <div> */}
-            <div className='space-y-6 ml-10'>
+            <div className='space-y-6 md:ml-10'>
               <h3 className='text-xl font-bold mb-4'>Get in Touch</h3>
 
-              <div className='flex items-start gap-4'>
+              <div className='flex items-start gap-4 p-2 rounded-md bg-primary/10'>
                 <div className='p-3 bg-primary/10 rounded-full text-primary'>
                   <Mail size={20} />
                 </div>
@@ -134,7 +134,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className='flex items-start gap-4'>
+              <div className='flex items-start gap-4 p-2 rounded-md bg-primary/10'>
                 <div className='p-3 bg-primary/10 rounded-full text-primary'>
                   <Phone size={20} />
                 </div>
@@ -144,7 +144,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className='flex items-start gap-4'>
+              <div className='flex items-start gap-4 p-2 rounded-md bg-primary/10'>
                 <div className='p-3 bg-primary/10 rounded-full text-primary'>
                   <MapPin size={20} />
                 </div>

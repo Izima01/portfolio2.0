@@ -23,7 +23,7 @@ const Footer = () => {
 
   return (
     <footer className='py-5 bg-card border-t border-border'>
-      <div className='container mx-auto px-0 max-w-5xl'>
+      <div className='container px-7 md:px-10 xl:max-w-6xl mb-14 md:mb-0'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
           <div>
             <p className='text-muted-foreground text-lg'>
@@ -48,19 +48,19 @@ const Footer = () => {
             </a>
           </div>
 
-          <div>
-            <nav className='flex items-center gap-6'>
-              {navLinks.map(({ href, name }) => (
-                <a
-                  key={name}
-                  href={href}
-                  className='text-muted-foreground hover:text-primary transition-colors'
-                >
-                  {name}
-                </a>
-              ))}
-            </nav>
-          </div>
+          {/* <div> */}
+          <nav className='hidden md:flex items-center gap-6'>
+            {navLinks.map(({ href, name }) => (
+              <a
+                key={name}
+                href={href}
+                className='text-muted-foreground hover:text-primary transition-colors'
+              >
+                {name}
+              </a>
+            ))}
+          </nav>
+          {/* </div> */}
         </div>
       </div>
     </footer>

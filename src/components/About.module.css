@@ -1,6 +1,5 @@
 .aboutSection {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-block: 4rem;
 }
 
 .badge {
@@ -9,7 +8,7 @@
   gap: 1rem;
   padding: 0.375rem 1rem;
   border-radius: 9999px;
-  background-color: rgba(var(--secondary));
+  /* background-color: rgba(210 20% 20% 50%); */
   transform: translateX(100px);
   opacity: 0;
   transition: transform 500ms, opacity 500ms;
@@ -22,9 +21,8 @@
 
 .quoteBox {
   padding: 1rem;
-  border: 1px solid rgba(var(--primary), 0.2);
-  border-radius: 0.5rem;
-  background-color: rgba(var(--primary), 0.05);
+  /* border: 1px solid rgba(var(--primary), 0.2); */
+  /* border-radius: 0.5rem; */
   margin: 1.5rem 0;
 }
 
@@ -35,4 +33,5 @@
   box-shadow: 0 4px 6px -1px rgba(var(--primary), 0.5);
   width: fit-content;
   margin-left: auto;
+  height: 300px;
 }

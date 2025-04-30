@@ -71,7 +71,7 @@
   }
 
   .project-card {
-    @apply transition-transform duration-300 hover:translate-y-[-8px] hover:shadow-xl;
+    @apply transition-[transform,shadow] duration-300 hover:translate-y-[-8px] hover:shadow-lg hover:shadow-slate-800;
     transform: translateZ(0);
     will-change: transform;
   }
