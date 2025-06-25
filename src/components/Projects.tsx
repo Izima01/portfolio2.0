@@ -28,6 +28,17 @@ interface Project {
 const Projects = () => {
   const projects: Project[] = [
     {
+      id: 10,
+      // category: 'frontend',
+      image: work1,
+      title: 'Shots By Itopa Photography Portfolio',
+      technologies: ['Nextjs', 'TailwindCSS', 'Typescript'],
+      description:
+        'A fast, responsive photography portfolio built with Next.js and Tailwind CSS. Optimized for performance and mobile viewing, with dynamic image rendering and clean grid layout. Deployed on Vercel.',
+      github: 'https://github.com/Izima01/moments-and-memories',
+      demo: 'https://shotsbyitopa.vercel.app/',
+    },
+    {
       id: 1,
       image: work13,
       title: "Izima Obisike's Portfolio",
