@@ -12,6 +12,7 @@ import work6 from '../assets/work6.webp';
 import work5 from '../assets/work5.webp';
 import work9 from '../assets/work9.webp';
 import work13 from '../assets/work 13.png';
+import work14 from '../assets/work14.png';
 
 import Image, { StaticImageData } from 'next/image';
 
@@ -30,7 +31,7 @@ const Projects = () => {
     {
       id: 10,
       // category: 'frontend',
-      image: work1,
+      image: work14,
       title: 'Shots By Itopa Photography Portfolio',
       technologies: ['Nextjs', 'TailwindCSS', 'Typescript'],
       description:
