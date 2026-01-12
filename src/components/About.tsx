@@ -96,7 +96,7 @@ const About = () => {
           <div className="md:col-span-3 justify-self-center order-3">
             <Button asChild className={animations.pulseHover} size="lg">
               <a
-                href={"/Izima Obisike Fullstack.pdf"}
+                href={"/Obisike Izima.pdf"}
                 download=""
                 className="flex items-center gap-3 text-xl"
               >
