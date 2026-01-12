@@ -81,13 +81,13 @@ const About = () => {
             </div>
           </div>
 
-          <div className="md:col-span-1 order-1 justify-self-start md:order-2">
+          <div className="md:col-span-1 order-1 justify-self-start md:order-2 ob">
             <div className={`${styles.profileImage} ${animations.pulseHover}`}>
               <Image
                 src="/profile.jpeg"
                 alt="Izima Obisike"
                 width={320}
-                height={600}
+                height={560}
                 priority
               />
             </div>

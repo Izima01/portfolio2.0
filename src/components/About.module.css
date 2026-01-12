@@ -21,8 +21,6 @@
 
 .quoteBox {
   padding: 1rem;
-  /* border: 1px solid rgba(var(--primary), 0.2); */
-  /* border-radius: 0.5rem; */
   margin: 1.5rem 0;
 }
 
@@ -33,5 +31,4 @@
   box-shadow: 0 4px 6px -1px rgba(var(--primary), 0.5);
   width: fit-content;
   margin-left: auto;
-  height: 300px;
 }
