@@ -13,6 +13,7 @@ import work5 from "../assets/work5.webp";
 import work9 from "../assets/work9.webp";
 import work13 from "../assets/work 13.png";
 import work14 from "../assets/work14.png";
+import work15 from "../assets/work15.png";
 
 import Image, { StaticImageData } from "next/image";
 
@@ -28,6 +29,17 @@ interface Project {
 
 const Projects = () => {
   const projects: Project[] = [
+    {
+      id: 11, 
+      // category: 'frontend', // Or 'fullstack' since it integrates a headless CMS
+      image: work15, 
+      title: "Endoscopy Centre Lagos",
+      technologies: ["React", "Sanity.io", "React Query", "TailwindCSS", "TypeScript"], 
+      description:
+        "A highly professional, responsive web platform built for a specialist medical diagnostic facility in Lagos. Integrates Sanity.io as a headless CMS for dynamic blog management. Built with a fully accessible UI using Radix/Shadcn primitives.",
+      github: "https://github.com/Izima01/scope-spot-site",
+      demo: "https://www.endoscopy-centre-lagos.com/",
+    },
     {
       id: 10,
       // category: 'frontend',
