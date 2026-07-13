@@ -27,6 +27,8 @@ const About = () => {
 
   return (
     <section id="about" ref={sectionRef} className={styles.aboutSection}>
+      <div className='absolute inset-0 bg-[radial-gradient(ellipse_70%_90%_at_70%_90%,rgba(255,0,0,0.08),transparent)]' />
+
       <div className="container xl:max-w-6xl px-10">
         <h2 className="section-heading">About Me</h2>
 

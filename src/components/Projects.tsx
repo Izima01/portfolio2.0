@@ -6,9 +6,7 @@ import { Button } from "@/components/ui/button";
 import work10 from "../assets/work10.png";
 import work12 from "../assets/work 12.png";
 import work8 from "../assets/work8.webp";
-import work1 from "../assets/work1.webp";
 import work4 from "../assets/work4.webp";
-import work6 from "../assets/work6.webp";
 import work5 from "../assets/work5.webp";
 import work9 from "../assets/work9.webp";
 import work13 from "../assets/work 13.png";
@@ -87,6 +85,23 @@ const Projects = () => {
       github: "https://github.com/Izima01/talkative-chat/",
       demo: "https://talkative-chat.vercel.app/",
     },
+        {
+      id: 7,
+      // category: 'frontend',
+      image: work4,
+      title: "Music Player App",
+      technologies: [
+        "React",
+        "TailwindCSS",
+        "Axios",
+        "React Context",
+        "Rest API",
+      ],
+      description:
+        "A music player app developed with React. I consumed a custom API and used it to display the songs and albums. You can play, pause, shuffle. Also like songs and view the liked songs",
+      github: "https://www.github.com/Izima01/Musica",
+      demo: "https://izzycodes-musica.netlify.app/",
+    },
     {
       id: 1,
       image: work13,
@@ -109,25 +124,6 @@ const Projects = () => {
       demo: "https://www.rencostume.com/",
     },
     {
-      id: 5,
-      // category: 'fullstack',
-      image: work9,
-      title: "E-Learning App",
-      technologies: [
-        "React",
-        "TailwindCSS",
-        "UseContext",
-        "MongoDB",
-        "Express JS",
-        "Node JS",
-      ],
-      description:
-        "A full stack E-Learning app where you can find E-books, VIdeos and full on courses to learn and upskill.",
-
-      github: "",
-      demo: "https://mellow-longma-801e80.netlify.app/",
-    },
-    {
       id: 6,
       // category: 'frontend',
       image: work5,
@@ -144,60 +140,49 @@ const Projects = () => {
       github: "https://www.github.com/Izima01/artsy-marketplace",
       demo: "https://artsy-marketplace.netlify.app/",
     },
-    {
-      id: 7,
-      // category: 'frontend',
-      image: work4,
-      title: "Music Player App",
-      technologies: [
-        "React",
-        "TailwindCSS",
-        "Axios",
-        "React Context",
-        "Rest API",
-      ],
-      description:
-        "A music player app developed with React. I consumed a custom API and used it to display the songs and albums. You can play, pause, shuffle. Also like songs and view the liked songs",
-      github: "https://www.github.com/Izima01/Musica",
-      demo: "https://izzycodes-musica.netlify.app/",
-    },
-    {
-      id: 8,
-      // category: 'frontend',
-      image: work6,
-      title: "Trivia App",
-      technologies: [
-        "React",
-        "Redux Toolkit",
-        "React Swiper",
-        "Open Trivia API",
-      ],
-      description:
-        "A quiz app with different categories and difficulties of trivia questions. Countdown timer and scoring system",
-      github: "https://github.com/Izima01/portfolio1.0",
-      demo: "https://izzys-trivia-app.netlify.app",
-    },
-    {
-      id: 9,
-      // category: 'frontend',
-      image: work1,
-      title: "Gaming Multi Step Form",
-      technologies: ["React", "TailwindCSS", "React-Switch"],
-      description:
-        "A Frontend Mentor Challenge. A form for a gaming program with different steps and options for different time frames and add-ons",
-      github: "https://github.com/Izima01/multi-step-form",
-      demo: "https://fe-mentor-multi-step-form.netlify.app/",
-    },
   ];
 
   // Create refs for animation
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   return (
-    <section id="projects" className="py-10">
+    <section id="projects" className="py-10 relative overflow-clip">
+      
+      {/* Stars animation */}
+      <div className='absolute inset-0 -left-10 -top-24 opacity-70 bg-background z-0'>
+        {/* <div className='absolute w-full h-full bg-[radial-gradient(ellipse_90%_90%_at_center,_var(--tw-gradient-stops))] from-indigo-900/10 to-background/50' /> */}
+        <div className='stars absolute inset-0 projects' />
+      </div>
+
+      <style jsx>{`
+        .stars.projects {
+          background: transparent url('/stars-background.jpg') repeat top left;
+          z-index: -1;
+          background-size: 120vw 1000px;
+          will-change: transform;
+          transform: translateZ(0);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+          .stars.projects {
+            animation: move-stars 30s linear infinite;
+            backface-visibility: hidden;
+          }
+        }
+
+        @keyframes move-stars {
+          from {
+            background-position: 0 0;
+          }
+          to {
+            background-position: 500px 1000px;
+          }
+        }
+      `}</style>
+
       <div className="container xl:max-w-6xl px-10">
         <h2 className="section-heading text-center mx-auto">Projects</h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-white mb-12 max-w-2xl mx-auto">
           Here are some of my recent projects. Each demonstrates different
           skills and technologies.
         </p>
@@ -206,7 +191,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={project.id}
-              className="project-card bg-card overflow-hidden border border-border h-fit"
+              className="project-card overflow-hidden border border-border h-fit"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="relative w-full h-48 lg:h-60 overflow-hidden group">
@@ -239,7 +224,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-6">
                   {project.github && (
                     <Button
                       variant="outline"
@@ -251,24 +236,27 @@ const Projects = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2"
+                        className="flex items-center gap-2 float"
                       >
-                        <span className="absolute inset-0 w-0 bg-primary/10 transition-all duration-300 ease-out group-hover:w-full"></span>
+                        <span className="absolute inset-0 w-0 bg-primary/20 transition-all duration-300 ease-in group-hover:w-full"></span>
                         <Github size={16} className="relative z-10" />
                         <span className="relative z-10">Code</span>
                       </a>
                     </Button>
                   )}
 
-                  <Button size="sm" asChild className="hover-pulse">
+                  <Button size="sm" asChild className="relative oveflow-hidden group">
                     <a
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2"
                     >
-                      <ExternalLink size={16} />
+                      <ExternalLink size={16} className="z-10" />
+                        <span className="absolute inset-0 w-0 bg-black transition-all delay-100 duration-300 ease-out group-hover:w-full"></span>
+                        <span className="z-10">
                       Live Demo
+                        </span>
                     </a>
                   </Button>
                 </div>

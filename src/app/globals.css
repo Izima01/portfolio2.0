@@ -71,13 +71,13 @@
   }
 
   .project-card {
-    @apply transition-[transform,shadow] duration-300 hover:translate-y-[-8px] hover:shadow-lg hover:shadow-slate-800;
+    @apply transition-transform duration-300 hover:translate-y-2;
     transform: translateZ(0);
-    will-change: transform;
+    will-change: shadow;
   }
 
   .tech-badge {
-    @apply bg-secondary text-foreground text-xs px-2 py-1 rounded-full transition-colors duration-300 hover:bg-primary hover:text-white;
+    @apply bg-secondary text-foreground text-xs px-2 py-1 rounded-full transition-[colors,transform,margin] duration-300 hover:bg-primary hover:scale-105 hover:m-1.5;
   }
 
   .link-with-hover {

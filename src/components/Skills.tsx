@@ -95,8 +95,8 @@ const Skills = () => {
       className='py-20 relative overflow-hidden'
     >
       <div className='absolute inset-0 bg-background opacity-90 z-0'>
-        <div className='absolute w-full h-full bg-[radial-gradient(ellipse_100%_90%_at_center,_var(--tw-gradient-stops))] from-indigo-900/20 via-background to-background' />
-        <div className='stars absolute inset-0' />
+        <div className='absolute w-full h-full bg-[radial-gradient(ellipse_100%_90%_at_center,_var(--tw-gradient-stops))] from-indigo-900/20 via-background to-background/50' />
+        <div className='stars skills absolute inset-0' />
       </div>
 
       <div className='container px-10 xl:max-w-6xl relative z-10 max-w-5xl mx-auto'>
@@ -157,29 +157,20 @@ const Skills = () => {
       </div>
 
       <style jsx>{`
-        .stars {
+        .stars.skills {
           background: transparent url('/stars-background.jpg') repeat top center;
           z-index: -1;
-          background-size: 1000px 1000px;
+          background-size: 100%;
           will-change: transform;
           transform: translateZ(0);
         }
 
-        @media (prefers-reduced-motion: no-preference) {
-          .stars {
-            animation: move-stars 200s linear infinite;
-            backface-visibility: hidden;
-          }
-        }
-
-        @keyframes move-stars {
-          from {
-            background-position: 0 0;
-          }
-          to {
-            background-position: 10000px 0;
-          }
-        }
+        // @media (prefers-reduced-motion: no-preference) {
+        //   .stars.skills {
+        //     animation: roll-stars 100s linear infinite;
+        //     backface-visibility: hidden;
+        //   }
+        // }
       `}</style>
     </section>
   );

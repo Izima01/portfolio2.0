@@ -6,13 +6,14 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section id='home' className='relative min-h-[70vh] flex items-center'>
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background to-background z-0'></div>
-
-      <div className='container xl:max-w-5xl px-10 relative z-10'>
+    <section id='home' className='relative min-h-[70vh] flex items-center border-b border-primary'>
+      <div className='absolute inset-0 [background-image:linear-gradient(rgba(255,0,0,0.1)_1px,transparent_1px),linear-gradient(to_right,rgba(255,0,0,0.1)_1px,transparent_1px)] [background-size:48px_48px]' />
+      <div className='absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_30%,rgba(92,108,192,0.3),transparent)]' />
+      
+      <div className='container xl:max-w-6xl relative z-10'>
         <div className='delayed-fade-in'>
-          <p className='text-primary mb-4 flex items-center gap-2'>
-            <Heart size={18} className='text-primary animate-grow mr-2 ml-1' />
+          <p className='text-primary text-xl mb-4 flex items-center gap-2'>
+            <Heart size={20} className='text-primary animate-grow mr-2 ml-1' />
             <span>Hello, my name is</span>
           </p>
           <h1 className='text-4xl md:text-6xl font-bold mb-4 fun-heading'>
