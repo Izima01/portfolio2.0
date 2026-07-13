@@ -84,7 +84,7 @@ const About = () => {
           <div className="md:col-span-1 order-1 justify-self-start md:order-2 ob">
             <div className={`${styles.profileImage} ${animations.pulseHover}`}>
               <Image
-                src="/profile.jpeg"
+                src="/profile.jpg"
                 alt="Izima Obisike"
                 width={320}
                 height={560}
